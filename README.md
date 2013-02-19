@@ -14,7 +14,7 @@ $ npm install grunt-closure-tools
 
 Place compiler.jar from http://closure-compiler.googlecode.com/files/compiler-latest.zip to "build" folder
 
-In windows run "DOSKEY grunt=grunt.cmd $*" in console
+In windows console run "DOSKEY grunt=grunt.cmd $*" (<a href="http://gruntjs.com/frequently-asked-questions#on-windows-why-does-my-js-editor-open-when-i-try-to-run-grunt"><b>FAQ</b></a>)
 
 $ grunt
 

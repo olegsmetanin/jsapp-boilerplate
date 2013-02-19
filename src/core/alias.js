@@ -1,14 +1,14 @@
 var self = this;
 
-var Class = self['Class'];	// Class
-var DOM = self['DomUtil'];	// DOM
-var Event = self['bean'];		// Event
-var Bus = self['PubSub'];		// Bus
-var Req = self['reqwest'];	// Ajax Request
-var RPC = self['easyXDM'];	// RPC
-var JSON = self['JSON'];		// JSON
+var Class = self['Class'];	        // Class
+var DOM = self['DomUtil'];	        // DOM
+var Event = self['bean'];	        // Event
+var Bus = self['PubSub'];	        // Bus
+var Req = self['reqwest'];	        // Ajax Request
+var RPC = self['easyXDM'];	        // RPC
+var JSON = self['JSON'];	        // JSON
 
-var domready = self['domready'];
+var domready = self['domready'];    //DomReady
 
 /**
  * Clear namespaces
