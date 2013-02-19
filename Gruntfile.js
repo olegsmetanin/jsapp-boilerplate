@@ -30,7 +30,10 @@ module.exports = function (grunt) {
 
                     'src/core/alias.js',
 
-                    'src/samples.js'
+                    'src/samples.js',
+					
+                    'src/exports.js'
+					
 
                 ],
                 dest:'app.dev.js'

@@ -23,11 +23,7 @@ delete self['JSON'];
 
 delete self['jsface'];
 
-/**
- * Export
- */
 
-self['Samples']=Samples;
 
 
 
