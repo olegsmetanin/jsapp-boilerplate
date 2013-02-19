@@ -2,17 +2,18 @@ module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        lint:{
-            all:['Gruntfile.js', 'src/*.js', 'src/core/*.js']
+        lint: {
+            all: ['Gruntfile.js', 'src/*.js', 'src/core/*.js']
         },
-        jshint:{
-            options:{
-                browser:true
+        jshint: {
+            options: {
+                browser: true
             }
         },
-        concat:{
-            dev:{
-                src:[
+        concat: {
+            dev: {
+                src: [
+                    'src/core/utils.js',
                     'src/core/wait4.js',
                     'src/core/ready.js',
                     'src/core/json2.js',
@@ -34,38 +35,36 @@ module.exports = function (grunt) {
 
                     'src/exports.js'
 
-
-                ],
-                dest:'app.dev.js'
+                    ],
+                dest: 'app.dev.js'
             },
-            dist:{
-                src:[
+            dist: {
+                src: [
                     'src/core/intro.js',
                     'app.dev.js',
                     'src/core/outro.js'
-                ],
-                dest:'app.js'
+                    ],
+                dest: 'app.js'
             }
 
 
         },
-        closureCompiler:{
+        closureCompiler: {
 
-            options:{
+            options: {
                 // [REQUIRED] Path to closure compiler
-                compilerFile:'./build/compiler.jar',
+                compilerFile: './build/compiler.jar',
 
                 // [OPTIONAL] set to true if you want to check if files were modified
                 // before starting compilation (can save some time in large sourcebases)
-                checkModified:true,
+                checkModified: true,
 
                 // [OPTIONAL] Set Closure Compiler Directives here
-                compilerOpts:{
-                    compilation_level:'ADVANCED_OPTIMIZATIONS',
+                compilerOpts: {
+                    compilation_level: 'ADVANCED_OPTIMIZATIONS',
                     //compilation_level:'SIMPLE_OPTIMIZATIONS',
-                    externs:['src/core/externs_closure.js']
+                    externs: ['src/core/externs_closure.js']
                     //externs:['src/leaflet/leaflet-src.js','src/core/externs_closure.js']
-
                     //define: ["'goog.DEBUG=false'"],
                     //warning_level: 'verbose',
                     //jscomp_off: ['checkTypes', 'fileoverviewTags'],
@@ -74,9 +73,9 @@ module.exports = function (grunt) {
                 }
 
             },
-            app:{
-                src:'app.js',
-                dest:'app.min.js'
+            app: {
+                src: 'app.js',
+                dest: 'app.min.js'
             }
         }
 
@@ -85,7 +84,6 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-closure-tools');
-
 
     // Default task.
     grunt.registerTask('default', ['concat', 'closureCompiler']);

@@ -1,7 +1,7 @@
 var Samples = Class({
 
-    constructor: function() {},
-    map: function(div) {
+    constructor: function () {},
+    map: function (div) {
         var self = this;
 
         self.current = L.map(DOM.get(div)).setView([0, 0], 5);
@@ -13,40 +13,40 @@ var Samples = Class({
 
 
     },
-    dom: function(divclick, appenddiv) {
+    dom: function (divclick, appenddiv) {
 
-        Event.on(DOM.get(divclick), 'click', function() {
+        Evt.on(DOM.get(divclick), 'click', function () {
             var el = DOM.create('div', 'newdiv', DOM.get(appenddiv));
             el.innerHTML = 'new div';
             el.style.color = 'magenta';
 
-            console.log("Div appended in #" + appenddiv);
+            console.log("Div appended to #" + appenddiv);
         });
 
     },
-    pubsub: function(div) {
+    pubsub: function (div) {
 
-        Bus.subscribe('msg', function() {
+        Bus.subscribe('msg', function () {
             console.log("Get msg!");
         });
 
-        Event.on(DOM.get(div), 'click', function() {
+        Evt.on(DOM.get(div), 'click', function () {
             Bus.publish('msg');
             console.log("Publish msg");
         });
 
     },
-    req: function(div) {
+    req: function (div) {
 
-        Event.on(DOM.get(div), 'click', function() {
+        Evt.on(DOM.get(div), 'click', function () {
 
             Req({
                 url: 'http://ws.geonames.org/searchJSON?q=USA&maxRows=10&callback=?',
                 type: 'jsonp',
-                success: function(resp) {
+                success: function (resp) {
                     console.log(JSON.stringify(resp));
                 },
-                error: function(err) {
+                error: function (err) {
                     console.log(JSON.stringify(err));
                 }
             });
