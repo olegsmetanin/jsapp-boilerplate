@@ -54,5 +54,3 @@
       loaded ? fn() : fns.push(fn)
     })
 }));
-
-var domready=this['domready'];

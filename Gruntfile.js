@@ -31,9 +31,9 @@ module.exports = function (grunt) {
                     'src/core/alias.js',
 
                     'src/samples.js',
-					
+
                     'src/exports.js'
-					
+
 
                 ],
                 dest:'app.dev.js'
@@ -61,9 +61,11 @@ module.exports = function (grunt) {
 
                 // [OPTIONAL] Set Closure Compiler Directives here
                 compilerOpts:{
-                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
-                    compilation_level:'SIMPLE_OPTIMIZATIONS',
+                    compilation_level:'ADVANCED_OPTIMIZATIONS',
+                    //compilation_level:'SIMPLE_OPTIMIZATIONS',
                     externs:['src/core/externs_closure.js']
+                    //externs:['src/leaflet/leaflet-src.js','src/core/externs_closure.js']
+
                     //define: ["'goog.DEBUG=false'"],
                     //warning_level: 'verbose',
                     //jscomp_off: ['checkTypes', 'fileoverviewTags'],
