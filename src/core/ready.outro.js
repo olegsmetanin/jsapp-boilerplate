@@ -1,3 +1,0 @@
-
-// dom is loaded
-});
