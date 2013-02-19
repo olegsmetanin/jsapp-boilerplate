@@ -1,89 +1,89 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    lint: {
-      all: ['grunt.js', 'src/*.js']
-    },
-    jshint: {
-      options: {
-        browser: true
-      }
-    },
-	concat: {
-		dev: {
-		  src: [
-			'src/core/wait4.js',		  
-			'src/core/ready.js',
-			'src/core/json2.js',
-			'src/core/domutil.js',
-			'src/core/bean.js',
-			'src/core/reqwest.js',	
-			'src/core/easyXDM.js',			
-			'src/core/jsface.js',			
-			'src/core/pubsub.js',			
+    // Project configuration.
+    grunt.initConfig({
+        lint:{
+            all:['Gruntfile.js', 'src/*.js', 'src/core/*.js']
+        },
+        jshint:{
+            options:{
+                browser:true
+            }
+        },
+        concat:{
+            dev:{
+                src:[
+                    'src/core/wait4.js',
+                    'src/core/ready.js',
+                    'src/core/json2.js',
+                    'src/core/domutil.js',
+                    'src/core/bean.js',
+                    'src/core/reqwest.js',
+                    'src/core/easyXDM.js',
+                    'src/core/jsface.js',
+                    'src/core/pubsub.js',
 
-			'src/leaflet/leaflet-providers-0.0.2.js',
-			'src/leaflet/leaflet.Google.js',
-			'src/leaflet/leaflet.Bing.js',
-			'src/leaflet/leaflet.Yandex.js',			
-			
-			'src/core/alias.js',
-			
-			'src/samples.js'		
-			
-			],
-		  dest: 'app.dev.js'
-    },
-		dist: {
-		  src: [
-			'src/core/intro.js', 
-			'app.dev.js',
-			'src/core/outro.js'
-			],
-		  dest: 'app.js'
-    }	
-	
-	
-	},
-	closureCompiler:  {
+                    'src/leaflet/leaflet-providers-0.0.2.js',
+                    'src/leaflet/leaflet.Google.js',
+                    'src/leaflet/leaflet.Bing.js',
+                    'src/leaflet/leaflet.Yandex.js',
 
-  options: {
-    // [REQUIRED] Path to closure compiler
-    compilerFile: './build/compiler.jar',
+                    'src/core/alias.js',
 
-    // [OPTIONAL] set to true if you want to check if files were modified
-    // before starting compilation (can save some time in large sourcebases)
-    checkModified: true,
+                    'src/samples.js'
 
-    // [OPTIONAL] Set Closure Compiler Directives here
-    compilerOpts: {
-       //compilation_level: 'ADVANCED_OPTIMIZATIONS',
-       compilation_level: 'SIMPLE_OPTIMIZATIONS',	   
-	   externs: ['src/core/externs_closure.js']
-       //define: ["'goog.DEBUG=false'"],
-       //warning_level: 'verbose',
-       //jscomp_off: ['checkTypes', 'fileoverviewTags'],
-       //summary_detail_level: 3,
-       //output_wrapper: '(function(){%output%}).call(this);'
-    }
+                ],
+                dest:'app.dev.js'
+            },
+            dist:{
+                src:[
+                    'src/core/intro.js',
+                    'app.dev.js',
+                    'src/core/outro.js'
+                ],
+                dest:'app.js'
+            }
 
-  },
-  app: {
-    src: 'app.js',
-    dest: 'app.min.js'
-  }
-}
-	
-	
-  });
 
-	grunt.loadNpmTasks('grunt-contrib-concat');  
-	grunt.loadNpmTasks('grunt-closure-tools'); 
+        },
+        closureCompiler:{
 
- 
-  // Default task.
-  grunt.registerTask('default', ['concat', 'closureCompiler']);
-  
+            options:{
+                // [REQUIRED] Path to closure compiler
+                compilerFile:'./build/compiler.jar',
+
+                // [OPTIONAL] set to true if you want to check if files were modified
+                // before starting compilation (can save some time in large sourcebases)
+                checkModified:true,
+
+                // [OPTIONAL] Set Closure Compiler Directives here
+                compilerOpts:{
+                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    compilation_level:'SIMPLE_OPTIMIZATIONS',
+                    externs:['src/core/externs_closure.js']
+                    //define: ["'goog.DEBUG=false'"],
+                    //warning_level: 'verbose',
+                    //jscomp_off: ['checkTypes', 'fileoverviewTags'],
+                    //summary_detail_level: 3,
+                    //output_wrapper: '(function(){%output%}).call(this);'
+                }
+
+            },
+            app:{
+                src:'app.js',
+                dest:'app.min.js'
+            }
+        }
+
+
+    });
+
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-closure-tools');
+
+
+    // Default task.
+    grunt.registerTask('default', ['concat', 'closureCompiler']);
+
 
 };
