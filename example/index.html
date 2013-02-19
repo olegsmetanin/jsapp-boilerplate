@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jsapp-boilerplate</title>
+
+		
+ <link rel="stylesheet" href="stylesheets/leaflet.css" />
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="stylesheets/leaflet.ie.css" />
+ <![endif]-->		
+
+		<script src="../src/leaflet/leaflet-src.js"></script>			
+		<script type="text/javascript" src="../app.min.js"></script>		
+
+    </head>
+    <body>
+
+	<div id="map" style="width:400px; height:400px;"></div>
+	<div id="container">Append div here</div>
+	
+	
+	<button id="domreplace">Click to append</button>	
+	<button id="publish">Publish msg</button>
+	<button id="req">Make req</button>
+	
+	<p>Log</p>
+	<p><textarea cols="40" rows="8" id="consolelog" style="width:600px;"></textarea></p>
+	
+		<script type="text/javascript">
+			var console= {
+				log:function(m) {
+					document.getElementById('consolelog').value=document.getElementById('consolelog').value+m+'\n';	
+				}
+			}			
+        </script>
+
+
+		<script type="text/javascript">		
+			App.domready(function() {
+				
+				var samples=new App.Samples();
+				samples.map('map');
+				samples.dom('domreplace','container');
+				samples.pubsub('publish');
+				samples.req('req');
+				
+			});
+        </script>
+		
+    </body>
+</html>

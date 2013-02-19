@@ -1,0 +1,1 @@
+java -jar compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --js ../app.js --externs ../src/core/externs_closure.js --js_output_file ../app.min.js

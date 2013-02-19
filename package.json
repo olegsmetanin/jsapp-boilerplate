@@ -1,0 +1,27 @@
+{
+  "name": "jsapp-boilerplate",
+  "version": "0.0.1",
+  "description": "Javascript application boilerplate",
+  "main": "app.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "grunt-cli": "~0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/olegsmith/jsapp-boilerplate.git"
+  },
+  "keywords": [
+    "javascript",
+    "applicaton",
+    "boilerplate"
+  ],
+  "author": "olegsmith",
+  "license": "MIT"
+}
