@@ -39,3 +39,6 @@ publish
 # 
 build/compiler.jar
 node_modules
+
+app.js
+app.dev.js
