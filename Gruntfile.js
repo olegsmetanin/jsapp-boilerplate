@@ -40,9 +40,9 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    'src/core/intro.js',
+                    'src/intro.js',
                     'app.dev.js',
-                    'src/core/outro.js'
+                    'src/outro.js'
                     ],
                 dest: 'app.js'
             }

@@ -1,9 +1,9 @@
-function wait4(existsFn, msg) {
+function wait4(ObjName, msg) {
     return function (fn) {
         var counter = 0;
 
         function wait() {
-            if (existsFn()) {
+            if (typeof window[ObjName] === 'undefined') {
                 counter++;
                 if (counter < 9) {
                     window.setTimeout(wait, 200 * Math.pow(2, counter));
@@ -19,8 +19,4 @@ function wait4(existsFn, msg) {
     }
 }
 
-var wait4L = wait4(function () {
-    return typeof L === 'undefined'
-}, "Leaflet is not loaded!");
-
-
+var wait4L = wait4('L', "Leaflet is not loaded!");
