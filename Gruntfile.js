@@ -63,8 +63,10 @@ module.exports = function (grunt) {
                 compilerOpts: {
                     compilation_level: 'ADVANCED_OPTIMIZATIONS',
                     //compilation_level:'SIMPLE_OPTIMIZATIONS',
-                    externs: ['src/core/externs_closure.js']
+                    externs: ['src/core/externs_closure.js'],
                     //externs:['src/leaflet/leaflet-src.js','src/core/externs_closure.js']
+                    property_map_output_file: 'build/property_map_output.txt',
+                    property_map_input_file: 'build/property_map_input.txt'
                     //define: ["'goog.DEBUG=false'"],
                     //warning_level: 'verbose',
                     //jscomp_off: ['checkTypes', 'fileoverviewTags'],

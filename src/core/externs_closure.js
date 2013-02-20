@@ -4,10 +4,14 @@
 
 window.App = {
 	Samples: {
-		map: function() {},
-		dom: function() {},
-		pubsub: function() {},
-		req: function() {}
+		map: function () {},
+		dom: function () {},
+		pubsub: function () {},
+		req: function () {}
+	},
+	JSON: {
+		stringify: function () {},
+		parse: function () {}
 	}
 }
 
@@ -18,15 +22,22 @@ window.App = {
 
 window.L = {
 	Mixin: {
-		Events: function() {}
+		Events: function () {}
 	},
-	Class: function() {},
+	Class: function () {},
 	TileLayer: {
-		addTo: function() {}
+		addTo: function () {}
 	},
 	map: {
-		setView: function() {}
+		on: function () {},
+		setView: function () {},
+		getBounds: function () {},
+		getZoom: function () {}
+
 	},
-	tileLayer: function() {}
+	tileLayer: function () {},
+	getBounds: function () {},
+	LatLng: function () {}
+
 
 }

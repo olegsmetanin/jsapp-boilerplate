@@ -38,6 +38,7 @@ publish
 
 # 
 build/compiler.jar
+build/property_map_output.txt
 node_modules
 
 app.js
